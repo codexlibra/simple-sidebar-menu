@@ -1,0 +1,148 @@
+:root {
+	--color-sidebar-font: #ffff;
+	--color-blue: #0d6efd;
+	--color-purple: #9c0dfd;
+	--color-pink: #fd0de6;
+	--color-red: #fd0d6e;
+	--color-blue-tints-n3: #4a92fe;
+	--color-purple-tints-n3: #b54afe;
+	--color-pink-tints-n3: #fe4aec;
+	--box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+	--color-body: #f4f4f4;
+}
+
+body {
+	margin: 0;
+	background-color: var(--color-body);
+}
+
+
+
+
+/* *** Container *** */
+/*.container {
+	/* screen <= XS 
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	border: 1px solid #fd0d0d;
+}*/
+
+/* screen >= SM */
+@media (min-width: 576px) {
+	.sidebar {
+		height: 65px;
+		background: var(--color-blue);
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		user-select: none;
+		box-shadow: var(--box-shadow);
+	}
+	.container {
+		display: flex;
+		align-items: center;
+	}
+	.navbar-brand {
+		
+		padding: 1.40em;
+		color: var(--color-sidebar-font);
+		text-decoration: none;
+		font-weight: bold;
+		/*border: 1px solid red;*/
+	}
+	.toggler-icon {
+		color: var(--color-sidebar-font);
+		font-size: 24px;
+		margin-left: 1.40em;
+		cursor: pointer;
+		/*border: 1px solid red;*/
+	}
+	.sidebar-list {
+		position: fixed;
+		top: 0px;
+		margin: 0px;
+		width: 260px;
+		height: 100%;
+		padding-top: 0px;
+		padding-left: 0px;
+		/*box-shadow: 0 5px 1px rgba(0,0,0,0.1);*/
+		background: var(--color-blue);
+		list-style: none;
+		border: 1px solid red;
+	}
+
+	.sidebar-header {
+		height: 65px;
+		background-color: var(--color-blue-tints-n3);
+		display: flex;
+		justify-content: center /* coloca el brand en el centro del sidebar */
+	}
+
+	.sidebar-brand {
+		padding: 1.40em;
+		color: var(--color-sidebar-font);
+		text-decoration: none;
+		font-weight: bold;
+		border: 1px solid green;
+	}
+
+
+
+	.sidebar-link {
+		/*display: block; /* coloca los item en bloques respetando su margin */
+		display: flex;
+		align-items: center; /* mantiene alineado verticalmt el item con respecto al icono*/
+		text-decoration: none;
+		color: var(--color-sidebar-font);
+		padding: 1.45em;
+		/*border: 1px solid green;*/
+	}
+	
+	/*.sidebar-link {
+		/*display: block; /* coloca los item en bloques respetando su margin
+		display: flex;
+		align-items: center;
+		text-decoration: none;
+		color: var(--color-sidebar-font);
+		padding: 1.45em;
+		border: 1px solid green;
+	}*/
+	.sidebar-icon {
+		font-size: 24px;
+		margin-right: 12px;
+	}
+	.sidebar-link.active {
+		background-color: var(--color-red);
+	}
+
+	/* Start sidebar link dropdown */
+	.sidebar-link-dropdown {
+		display: flex;
+		justify-content: space-between; /* mantiene el icono y el link de un lado y la flesha del otro lado */
+		align-items: center; /* alinea verticalmt respecto al icono */
+		text-decoration: none;
+		color: var(--color-sidebar-font);
+		padding: 1.45em;
+
+	}
+	.sidebar-link-dropdown .group-dropdown {
+		display: flex;
+		align-items: center; /* alinea vertical link respecto al icono */
+	}
+	.group-dropdown .sidebar-icon {
+		font-size: 24px;
+		/*margin-left: 24px;*/
+		margin-right: 12px;
+		/*color: var(--color-sidebar-font);*/
+	}
+}
+
+/* screen >= LG */
+/*
+@media (min-width: 992px) {
+	
+}*/
+
