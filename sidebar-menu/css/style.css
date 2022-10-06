@@ -8,6 +8,7 @@
 	--color-purple-tints-n3: #b54afe;
 	--color-pink-tints-n3: #fe4aec;
 	--box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+	--sidebar-box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.15);
 	--color-body: #f4f4f4;
 }
 
@@ -15,9 +16,6 @@ body {
 	margin: 0;
 	background-color: var(--color-body);
 }
-
-
-
 
 /* *** Container *** */
 /*.container {
@@ -61,21 +59,35 @@ body {
 	}
 	.sidebar-list {
 		position: fixed;
+		display: flex;
+		flex-direction: column;
 		top: 0px;
 		margin: 0px;
 		width: 260px;
-		height: 100%;
+		/*height: 100%;*/
+		height: 100vh; /* ocupa todo el ancho disponible */
+		overflow-y: auto; /* solo cuando se desborda muestra el scroll */
+		
 		padding-top: 0px;
 		padding-left: 0px;
-		/*box-shadow: 0 5px 1px rgba(0,0,0,0.1);*/
 		background: var(--color-blue);
 		list-style: none;
-		border: 1px solid red;
+		box-shadow: var(--sidebar-box-shadow);
+		/*border: 1px solid red;*/
+	}
+
+	/* hide scrollbar (Chrome, Safari, newer versions of Opera) */
+	.sidebar-list::-webkit-scrollbar {
+		display: none;
+	}
+	.sidebar-list {
+		overflow: -moz-scrollbars-none; /* hide scrollbar (Firefox) */
+		-ms-overflow-style: none; /* hide scrollbar (Internet Explorer) */
 	}
 
 	.sidebar-header {
 		height: 65px;
-		background-color: var(--color-blue-tints-n3);
+		background-color: var(--color-blue);
 		display: flex;
 		justify-content: center /* coloca el brand en el centro del sidebar */
 	}
