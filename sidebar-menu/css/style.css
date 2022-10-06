@@ -130,7 +130,7 @@ body {
 		list-style: none;
 		padding-left: 0px;
 		background: var(--color-purple);
-		border: 1px solid green;
+		/*border: 1px solid green;*/
 	}
 
 	/*.dropdown-link { es compatible con el .sidebar-link
@@ -151,6 +151,14 @@ body {
 		color: var(--color-sidebar-font);
 		padding: 1.45em;
 
+	}
+
+	/* Start dropdown menu */
+	.submenu {
+		list-style: none;
+		padding-left: 0px;
+		background: var(--color-pink);
+		/*border: 1px solid green;*/
 	}
 }
 
