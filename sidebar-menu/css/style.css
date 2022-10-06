@@ -46,7 +46,6 @@ body {
 		align-items: center;
 	}
 	.navbar-brand {
-		
 		padding: 1.40em;
 		color: var(--color-sidebar-font);
 		text-decoration: none;
@@ -57,7 +56,7 @@ body {
 		color: var(--color-sidebar-font);
 		font-size: 24px;
 		margin-left: 1.40em;
-		cursor: pointer;
+		/*cursor: pointer;*/ /* ya no es necesaria*/
 		/*border: 1px solid red;*/
 	}
 	.sidebar-list {
@@ -88,9 +87,6 @@ body {
 		font-weight: bold;
 		border: 1px solid green;
 	}
-
-
-
 	.sidebar-link {
 		/*display: block; /* coloca los item en bloques respetando su margin */
 		display: flex;
@@ -100,16 +96,6 @@ body {
 		padding: 1.45em;
 		/*border: 1px solid green;*/
 	}
-	
-	/*.sidebar-link {
-		/*display: block; /* coloca los item en bloques respetando su margin
-		display: flex;
-		align-items: center;
-		text-decoration: none;
-		color: var(--color-sidebar-font);
-		padding: 1.45em;
-		border: 1px solid green;
-	}*/
 	.sidebar-icon {
 		font-size: 24px;
 		margin-right: 12px;
@@ -137,6 +123,34 @@ body {
 		/*margin-left: 24px;*/
 		margin-right: 12px;
 		/*color: var(--color-sidebar-font);*/
+	}
+
+	/* Start dropdown menu */
+	.dropdown-menu {
+		list-style: none;
+		padding-left: 0px;
+		background: var(--color-purple);
+		border: 1px solid green;
+	}
+
+	/*.dropdown-link { es compatible con el .sidebar-link
+		/*display: block; /* coloca los item en bloques respetando su margin 
+		display: flex;
+		align-items: center; /* mantiene alineado verticalmt el item con respecto al icono
+		text-decoration: none;
+		color: var(--color-sidebar-font);
+		padding: 1.45em;
+		/*border: 1px solid green;
+	}*/
+
+	.dropdown-link-submenu {
+		display: flex;
+		/*justify-content: space-between; /* mantiene el icono y el link de un lado y la flesha del otro lado */
+		/*align-items: center; /* alinea verticalmt respecto al icono */
+		text-decoration: none;
+		color: var(--color-sidebar-font);
+		padding: 1.45em;
+
 	}
 }
 
