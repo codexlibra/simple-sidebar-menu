@@ -8,28 +8,26 @@ for (let node = 0; node < node_list.length; node++) {
 	node_list[node].addEventListener("click", function () {
 		console.log("click en nodo: " + node);
 
-		node_list[node].classList.toggle("toggle");
-		
-		let toggle_status = node_list[node].classList[1];
-		console.log(toggle_status);
+		// obtiene el padre al que pertenece el elemento para agregarle la clase toggle y posteriormente poder realizar las funciones
+		parent_element = node_list[node].parentElement;
+		//console.log(parent_element.classList.add("parent"));
 
-		// obtiene su hijo icono
-		//console.log(node_list[node].children);
+		parent_element.classList.toggle("toggle");
+		//console.log(parent_element);
+	
+		let toggle_status = parent_element.classList[1];
+		//console.log(toggle_status);
 
 		if (toggle_status == "toggle") {
 			// cuando el elemento contiene la clase toggle el icono rota 180° y muestra el dropdown menu
 
-			// rota el icono
-			console.log("rota icono");
+			// rota el icono en el archivo css
 
 			// muestra dropdown menu
-			console.log("muestra dropdown menu");
 		} else {
 			// rota el icono en su pocición original
-			console.log("rota icono en su posición original");
 
 			// oculta dropdown menu
-			console.log("oculta dropdown menu");
 		}
 	});
 }

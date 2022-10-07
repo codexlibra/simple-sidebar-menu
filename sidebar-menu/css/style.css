@@ -131,12 +131,16 @@ body {
 		align-items: center; /* alinea vertical link respecto al icono */
 	}
 
+	/* rota el icono cuando tiene la clase toggle */
 	.dropdown-arrow {
 		transition: all 0.3s ease;
 	}
-	.sidebar-link-dropdown.toggle .dropdown-arrow {
-		/* rota el icono cuando tiene la clase toggle */
+	.sidebar-item.toggle .dropdown-arrow {
 		transform: rotate(180deg);
+	}
+	/*muestra el dropdown menu cuando cuenta con la clase toggle*/
+	.sidebar-item.toggle .dropdown-menu {
+		display: block;
 	}
 
 	.group-dropdown .sidebar-icon {
@@ -148,21 +152,13 @@ body {
 
 	/* Start dropdown menu */
 	.dropdown-menu {
+		display: none; /* solo lo muestra cuando el link dropdown cuenta con la clase toggle*/
 		list-style: none;
 		padding-left: 0px;
 		background: var(--color-purple);
+		/*transition: all 0.5s ease;*/
 		/*border: 1px solid green;*/
 	}
-
-	/*.dropdown-link { es compatible con el .sidebar-link
-		/*display: block; /* coloca los item en bloques respetando su margin 
-		display: flex;
-		align-items: center; /* mantiene alineado verticalmt el item con respecto al icono
-		text-decoration: none;
-		color: var(--color-sidebar-font);
-		padding: 1.45em;
-		/*border: 1px solid green;
-	}*/
 
 	.dropdown-link-submenu {
 		display: flex;
