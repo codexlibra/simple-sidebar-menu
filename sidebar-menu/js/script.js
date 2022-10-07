@@ -1,3 +1,5 @@
+
+// toggle dropdown menu and submenu
 var node_list = document.querySelectorAll(".sidebar-link-dropdown");
 
 /*console.log(node_list);
@@ -39,3 +41,12 @@ for (let node = 0; node < node_list.length; node++) {
 		}
 	});
 }
+
+// toggle sidebar
+var toggler_icon = document.querySelector(".toggler-icon");
+var sidebar = document.querySelector(".sidebar-list");
+
+toggler_icon.addEventListener("click", function () {
+	console.log("toggler icon click");
+	sidebar.classList.toggle("toggle");
+});
