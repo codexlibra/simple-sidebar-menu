@@ -131,17 +131,25 @@ body {
 		align-items: center; /* alinea vertical link respecto al icono */
 	}
 
-	/* rota el icono cuando tiene la clase toggle */
+	/* rota el icono cuando tiene la clase toggle 
 	.dropdown-arrow {
-		transition: all 0.3s ease;
+		/*transition: all 0.3s ease;
 	}
-	.sidebar-item.toggle .dropdown-arrow {
+	.sidebar-list .sidebar-item.toggle .sidebar-link-dropdown .dropdown-arrow {
+		transform: rotate(180deg);
+	}
+	muestra el dropdown submenu cuando cuenta con la clase toggle
+	.sidebar-list .sidebar-item.toggle .dropdown-menu {
+		display: block;
+	}*/
+
+	.sidebar-item.toggle .dropdown-menu-arrow {
 		transform: rotate(180deg);
 	}
 	/*muestra el dropdown menu cuando cuenta con la clase toggle*/
-	.sidebar-item.toggle .dropdown-menu {
+	/*.sidebar-item.toggle .dropdown-menu {
 		display: block;
-	}
+	}*/
 
 	.group-dropdown .sidebar-icon {
 		font-size: 24px;
@@ -152,7 +160,7 @@ body {
 
 	/* Start dropdown menu */
 	.dropdown-menu {
-		display: none; /* solo lo muestra cuando el link dropdown cuenta con la clase toggle*/
+		display: block; /* solo lo muestra cuando el link dropdown cuenta con la clase toggle*/
 		list-style: none;
 		padding-left: 0px;
 		background: var(--color-purple);
@@ -170,12 +178,28 @@ body {
 
 	}
 
-	/* Start dropdown menu */
-	.submenu {
+	/* Start dropdown submenu */
+	.dropdown-submenu {
 		list-style: none;
 		padding-left: 0px;
 		background: var(--color-pink);
 		/*border: 1px solid green;*/
+	}
+
+	.sidebar-item.submenu-toggle .dropdown-submenu-arrow {
+		transform: rotate(180deg);
+	}
+
+	/* rota el icono cuando tiene la clase toggle en el submenu*/
+	.dropdown-menu .sidebar-item .sidebar-link-dropdown .dropdown-arrow {
+		/*transition: all 0.3s ease;*/
+	}
+	.dropdown-menu .sidebar-item.toggle .sidebar-link-dropdown .dropdown-arrow {
+		/*transform: rotate(-180deg);*/
+	}
+	/*muestra el dropdown submenu cuando cuenta con la clase toggle*/
+	.dropdown-menu .sidebar-item.toggle .dropdown-submenu {
+		/*display: block;*/
 	}
 }
 

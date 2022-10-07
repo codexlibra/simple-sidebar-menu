@@ -12,8 +12,16 @@ for (let node = 0; node < node_list.length; node++) {
 		parent_element = node_list[node].parentElement;
 		//console.log(parent_element.classList.add("parent"));
 
-		parent_element.classList.toggle("toggle");
-		//console.log(parent_element);
+		if (node == 0) {
+			parent_element.classList.toggle("toggle");
+			//console.log(parent_element);
+		}
+
+		if (node == 1) {
+			parent_element.classList.toggle("submenu-toggle");
+			//console.log(parent_element);
+		}
+		
 	
 		let toggle_status = parent_element.classList[1];
 		//console.log(toggle_status);
