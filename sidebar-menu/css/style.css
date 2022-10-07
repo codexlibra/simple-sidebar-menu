@@ -97,7 +97,7 @@ body {
 		color: var(--color-sidebar-font);
 		text-decoration: none;
 		font-weight: bold;
-		border: 1px solid green;
+		/*border: 1px solid green;*/
 	}
 	.sidebar-link {
 		/*display: block; /* coloca los item en bloques respetando su margin */
@@ -131,25 +131,14 @@ body {
 		align-items: center; /* alinea vertical link respecto al icono */
 	}
 
-	/* rota el icono cuando tiene la clase toggle 
-	.dropdown-arrow {
-		/*transition: all 0.3s ease;
-	}
-	.sidebar-list .sidebar-item.toggle .sidebar-link-dropdown .dropdown-arrow {
-		transform: rotate(180deg);
-	}
-	muestra el dropdown submenu cuando cuenta con la clase toggle
-	.sidebar-list .sidebar-item.toggle .dropdown-menu {
-		display: block;
-	}*/
-
+	/* rota el icono cuando tiene la clase toggle */
 	.sidebar-item.toggle .dropdown-menu-arrow {
 		transform: rotate(180deg);
 	}
 	/*muestra el dropdown menu cuando cuenta con la clase toggle*/
-	/*.sidebar-item.toggle .dropdown-menu {
+	.sidebar-item.toggle .dropdown-menu {
 		display: block;
-	}*/
+	}
 
 	.group-dropdown .sidebar-icon {
 		font-size: 24px;
@@ -160,7 +149,7 @@ body {
 
 	/* Start dropdown menu */
 	.dropdown-menu {
-		display: block; /* solo lo muestra cuando el link dropdown cuenta con la clase toggle*/
+		display: none; /* solo lo muestra cuando el link dropdown cuenta con la clase toggle*/
 		list-style: none;
 		padding-left: 0px;
 		background: var(--color-purple);
@@ -175,31 +164,24 @@ body {
 		text-decoration: none;
 		color: var(--color-sidebar-font);
 		padding: 1.45em;
-
 	}
 
 	/* Start dropdown submenu */
 	.dropdown-submenu {
+		display: none;
 		list-style: none;
 		padding-left: 0px;
 		background: var(--color-pink);
 		/*border: 1px solid green;*/
 	}
 
+	/* rota el icono cuando tiene la clase toggle */
 	.sidebar-item.submenu-toggle .dropdown-submenu-arrow {
 		transform: rotate(180deg);
 	}
-
-	/* rota el icono cuando tiene la clase toggle en el submenu*/
-	.dropdown-menu .sidebar-item .sidebar-link-dropdown .dropdown-arrow {
-		/*transition: all 0.3s ease;*/
-	}
-	.dropdown-menu .sidebar-item.toggle .sidebar-link-dropdown .dropdown-arrow {
-		/*transform: rotate(-180deg);*/
-	}
-	/*muestra el dropdown submenu cuando cuenta con la clase toggle*/
-	.dropdown-menu .sidebar-item.toggle .dropdown-submenu {
-		/*display: block;*/
+	/*muestra el dropdown submenu cuando tiene la clase toggle*/
+	.sidebar-item.submenu-toggle .dropdown-submenu {
+		display: block;
 	}
 }
 
