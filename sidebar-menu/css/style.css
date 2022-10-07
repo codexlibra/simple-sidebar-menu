@@ -42,25 +42,26 @@ body {
 	.container {
 		display: flex;
 		align-items: center;
+		justify-content: space-between
 	}
 	.navbar-brand {
 		padding: 1.40em;
 		color: var(--color-sidebar-font);
 		text-decoration: none;
 		font-weight: bold;
-		/*border: 1px solid red;*/
+		border: 1px solid red;
 	}
 	.toggler-icon {
 		color: var(--color-sidebar-font);
 		font-size: 24px;
 		margin-left: 1.40em;
 		/*cursor: pointer;*/ /* ya no es necesaria*/
-		/*border: 1px solid red;*/
+		border: 1px solid red;
 	}
 	.sidebar-list {
 		position: fixed;
-		display: flex;
-		flex-direction: column;
+		/*display: none;*/
+		/*flex-direction: column;*/
 		top: 0px;
 		margin: 0px;
 		width: 260px;
