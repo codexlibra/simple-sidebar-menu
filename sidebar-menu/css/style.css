@@ -17,21 +17,162 @@ body {
 	background-color: var(--color-body);
 }
 
-/* *** Container *** */
-/*.container {
-	/* screen <= XS 
+/* screen <= 575 */
+.sidebar {
+	height: 65px;
+	background: var(--color-blue);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	user-select: none;
+	/*box-shadow: var(--box-shadow);*/
+}
+.container {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	height: 100%;
+	justify-content: space-between
+}
+.navbar-brand {
+	padding: 1.40em;
+	color: var(--color-sidebar-font);
+	text-decoration: none;
+	font-weight: bold;
+	/*border: 1px solid red;*/
+}
+.toggler-icon {
+	color: var(--color-sidebar-font);
+	font-size: 24px;
+	margin-left: 1.40em;
+	/*cursor: pointer;*/ /* ya no es necesaria*/
+	border: 1px solid red;
+}
+.sidebar-list {
+	position: fixed;
+	/*display: none;*/
+	/*flex-direction: column;*/
+	top: 0px;
+	margin: 0px;
+	/*width: 260px;*/
 	width: 100%;
-	margin-right: auto;
-	margin-left: auto;
-	border: 1px solid #fd0d0d;
-}*/
+	height: 100vh; /* ocupa todo el ancho disponible */
+	overflow-y: auto; /* solo cuando se desborda muestra el scroll */
+	padding-top: 0px;
+	padding-left: 0px;
+	background: var(--color-blue);
+	list-style: none;
+	box-shadow: var(--sidebar-box-shadow);
+	left: -100%; /* coloca el submenu a la izquierda para mostrarlo con efecto hacia la derecha */
+	transition: all 0.5s ease;
+	/*border: 1px solid red;*/
+}
+/* muestra el sidebar cuando tiene la clase toggle */
+.sidebar-list.toggle {
+	left: 0px;
+}
+.sidebar-header {
+	height: 65px;
+	background-color: var(--color-blue);
+	display: flex;
+	/*justify-content: center /* coloca el brand en el centro del sidebar */
+	justify-content: space-around; /* separa el sidebar brand y el icono x */
+	align-items: center; /* alinea los iconos al centro verticalmente */
+}
+.sidebar-brand {
+	padding: 1.40em;
+	color: var(--color-sidebar-font);
+	text-decoration: none;
+	font-weight: bold;
+	border: 1px solid green;
+}
+.sidebar-link {
+	/*display: block; /* coloca los item en bloques respetando su margin */
+	display: flex;
+	align-items: center; /* mantiene alineado verticalmt el item con respecto al icono*/
+	text-decoration: none;
+	color: var(--color-sidebar-font);
+	padding: 1.45em;
+	/*border: 1px solid green;*/
+}
+.sidebar-link.active {
+	background-color: var(--color-red);
+}
+.sidebar-icon {
+	font-size: 24px;
+	margin-right: 12px;
+}
+/* Start sidebar link dropdown */
+.sidebar-link-dropdown {
+	display: flex;
+	justify-content: space-between; /* mantiene el icono y el link de un lado y la flesha del otro lado */
+	align-items: center; /* alinea verticalmt respecto al icono */
+	text-decoration: none;
+	color: var(--color-sidebar-font);
+	padding: 1.45em;
+
+}
+.sidebar-link-dropdown .group-dropdown {
+	display: flex;
+	align-items: center; /* alinea vertical link respecto al icono */
+}
+/* rota el icono cuando tiene la clase toggle */
+.sidebar-item.toggle .dropdown-menu-arrow {
+	transform: rotate(180deg);
+}
+/*muestra el dropdown menu cuando cuenta con la clase toggle*/
+.sidebar-item.toggle .dropdown-menu {
+	display: block;
+}
+
+.group-dropdown .sidebar-icon {
+	font-size: 24px;
+	margin-right: 12px;
+}
+/* Start dropdown menu */
+.dropdown-menu {
+	display: none; /* solo lo muestra cuando el link dropdown cuenta con la clase toggle*/
+	list-style: none;
+	padding-left: 0px;
+	background: var(--color-purple);
+	/*transition: all 0.5s ease;*/
+	/*border: 1px solid green;*/
+}
+
+.dropdown-link-submenu {
+	display: flex;
+	text-decoration: none;
+	color: var(--color-sidebar-font);
+	padding: 1.45em;
+}
+/* Start dropdown submenu */
+.dropdown-submenu {
+	display: none;
+	list-style: none;
+	padding-left: 0px;
+	background: var(--color-pink);
+	/*border: 1px solid green;*/
+}
+
+/* rota el icono cuando tiene la clase toggle */
+.sidebar-item.submenu-toggle .dropdown-submenu-arrow {
+	transform: rotate(180deg);
+}
+/*muestra el dropdown submenu cuando tiene la clase toggle*/
+.sidebar-item.submenu-toggle .dropdown-submenu {
+	display: block;
+}
+/* hide scrollbar (Chrome, Safari, newer versions of Opera) */
+.sidebar-list::-webkit-scrollbar {
+	display: none;
+}
+.sidebar-list {
+	overflow: -moz-scrollbars-none; /* hide scrollbar (Firefox) */
+	-ms-overflow-style: none; /* hide scrollbar (Internet Explorer) */
+}
+
 
 /* screen >= SM */
 @media (min-width: 576px) {
+	.bx.bx-x {
+		display: none; /*oculta el icono x puesto que en esta resolucion no es nesesario*/
+	}
 	.sidebar {
 		height: 65px;
 		background: var(--color-blue);

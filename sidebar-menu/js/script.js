@@ -38,3 +38,10 @@ toggler_icon.addEventListener("click", function () {
 overlay.addEventListener("click", function () {
 	sidebar.classList.remove("toggle");
 });
+
+// hide sidebar when clicking bx-x icon
+var x_icon = document.querySelector(".bx-x");
+x_icon.addEventListener("click", function () {
+	//sidebar.classList.remove("toggle");
+	sidebar.classList.remove("toggle");
+});
