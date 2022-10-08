@@ -2,10 +2,6 @@
 // toggle dropdown menu and submenu
 var node_list = document.querySelectorAll(".sidebar-link-dropdown");
 
-/*console.log(node_list);
-
-console.log(node_list[0]);*/
-
 for (let node = 0; node < node_list.length; node++) {
 	node_list[node].addEventListener("click", function () {
 		//console.log("click en nodo: " + node);
