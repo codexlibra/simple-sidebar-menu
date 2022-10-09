@@ -1,3 +1,8 @@
+/*!
+ * Simple Sidebar Menu  v1.0.0
+ * Copyright 2022 Codex Libra
+ * Licensed under MIT (https://github.com/codexlibra/simple-sidebar-menu/blob/master/README.md)
+ */
 :root {
 	--color-sidebar-font: #ffff;
 	--color-blue: #0d6efd;
@@ -17,13 +22,12 @@ body {
 	background-color: var(--color-body);
 }
 
-/* screen <= 575px (XS) */
+/* Screen < 576px (XS) */
 .sidebar {
 	height: 65px;
 	background: var(--color-blue);
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	user-select: none;
-	/*box-shadow: var(--box-shadow);*/
 }
 .container {
 	display: flex;
@@ -35,7 +39,6 @@ body {
 	color: var(--color-sidebar-font);
 	text-decoration: none;
 	font-weight: bold;
-	/*border: 1px solid red;*/
 }
 .navbar-logo {
 	display: flex;
@@ -54,26 +57,23 @@ body {
 	font-size: 24px;
 	margin-left: 1.40em;
 	margin-right: 1.40em;
-	/*border: 1px solid red;*/
 }
 .sidebar-list {
 	margin: 0px;
 	width: 100%;
-	height: 100vh; /* ocupa todo el ancho disponible */
-	overflow-y: auto; /* solo cuando se desborda muestra el scroll */
+	height: 100vh;
+	overflow-y: auto;
 	padding-top: 0px;
 	padding-left: 0px;
 	background: var(--color-blue);
 	list-style: none;
-	left: -100%; /* coloca el submenu a la izquierda para mostrarlo con efecto hacia la derecha */
+	left: -100%;
 	transition: all 0.5s ease;
 	position: fixed;
 	top: 0px;
-	overflow: -moz-scrollbars-none; /* hide scrollbar (Firefox) */
-	/*-ms-overflow-style: none; /* hide scrollbar (Internet Explorer) */
-	/*border: 1px solid red;*/
+	overflow: -moz-scrollbars-none;
 }
-/* muestra el sidebar cuando tiene la clase toggle */
+/* Show the sidebar when the toggle class is active */
 .sidebar-list.toggle {
 	left: 0px;
 }
@@ -81,8 +81,8 @@ body {
 	height: 65px;
 	background-color: var(--color-blue);
 	display: flex;
-	justify-content: space-between; /* separa el sidebar brand y el icono x */
-	align-items: center; /* alinea los iconos al centro verticalmente */
+	justify-content: space-between;
+	align-items: center;
 }
 .sidebar-brand {
 	padding: 1.40em;
@@ -93,11 +93,10 @@ body {
 }
 .sidebar-link {
 	display: flex;
-	align-items: center; /* mantiene alineado verticalmt el item con respecto al icono*/
+	align-items: center;
 	text-decoration: none;
 	color: var(--color-sidebar-font);
 	padding: 1.45em;
-	/*border: 1px solid green;*/
 }
 .sidebar-link.active {
 	background-color: var(--color-red);
@@ -106,11 +105,12 @@ body {
 	font-size: 24px;
 	margin-right: 12px;
 }
+
 /* Start sidebar link dropdown */
 .sidebar-link-dropdown {
 	display: flex;
-	justify-content: space-between; /* mantiene el icono y el link de un lado y la flesha del otro lado */
-	align-items: center; /* alinea verticalmt respecto al icono */
+	justify-content: space-between;
+	align-items: center;
 	text-decoration: none;
 	color: var(--color-sidebar-font);
 	padding: 1.45em;
@@ -118,101 +118,81 @@ body {
 }
 .sidebar-link-dropdown .group-dropdown {
 	display: flex;
-	align-items: center; /* alinea vertical link respecto al icono */
+	align-items: center;
 }
-/* rota el icono cuando tiene la clase toggle */
 .sidebar-item.toggle .dropdown-menu-arrow {
 	transform: rotate(180deg);
 }
-/*muestra el dropdown menu cuando cuenta con la clase toggle*/
 .sidebar-item.toggle .dropdown-menu {
 	display: block;
 }
-
 .group-dropdown .sidebar-icon {
 	font-size: 24px;
 	margin-right: 12px;
 }
+
 /* Start dropdown menu */
 .dropdown-menu {
-	display: none; /* solo lo muestra cuando el link dropdown cuenta con la clase toggle*/
+	display: none;
 	list-style: none;
 	padding-left: 0px;
 	background: var(--color-purple);
-	/*transition: all 0.5s ease;*/
-	/*border: 1px solid green;*/
 }
-
 .dropdown-link-submenu {
 	display: flex;
 	text-decoration: none;
 	color: var(--color-sidebar-font);
 	padding: 1.45em;
 }
+
 /* Start dropdown submenu */
 .dropdown-submenu {
 	display: none;
 	list-style: none;
 	padding-left: 0px;
 	background: var(--color-pink);
-	/*border: 1px solid green;*/
 }
-
-/* rota el icono cuando tiene la clase toggle */
 .sidebar-item.submenu-toggle .dropdown-submenu-arrow {
 	transform: rotate(180deg);
 }
-/*muestra el dropdown submenu cuando tiene la clase toggle*/
 .sidebar-item.submenu-toggle .dropdown-submenu {
 	display: block;
 }
-/* hide scrollbar (Chrome, Safari, newer versions of Opera) */
 .sidebar-list::-webkit-scrollbar {
 	display: none;
 }
 
-/* screen >= 576px (SM) */
+/* Screen >= 576px (SM) */
 @media (min-width: 576px) {
 	.bx.bx-x {
-		display: none; /*oculta el icono x puesto que en esta resolucion no es nesesario*/
+		display: none;
 	}
 	.sidebar-list {
 		width: 260px;
 		box-shadow: var(--sidebar-box-shadow);
 	}
-
-	/* muestra el sidebar */
 	.sidebar-list.toggle {
 		left: 0px;
 	}
-
 	.sidebar-header {
-		justify-content: center /* coloca el brand en el centro del sidebar */
+		justify-content: center;
 	}
 
-	/* Overlay */
+	/* Start overlay */
 	.overlay {
 		position: fixed;
 		top: 0px;
-		/*left: 260px;*/
-		left: calc(-100% + 260px); /*muestra el overlay de izq a der junto con el sidebar*/
+		left: calc(-100% + 260px);
 		height: 100vh;
 		width: 100%;
-		opacity: 0; /* comienza mostrando el overlay sin opacidad */
-		pointer-events: none; /* permite seleccionar elementos debajo del overlay */
+		opacity: 0;
+		pointer-events: none;
 		transition: all 0.5s ease;
 		background-color: rgba(0,0,0,0.3);
 	}
 	.sidebar-list.toggle .overlay {
 		opacity: 1;
-		pointer-events: auto; /* no permite seleccionar elementos debajo del overlay */
+		pointer-events: auto;
 		left: 260px;
 	}
 }
-
-/* screen >= LG */
-/*
-@media (min-width: 992px) {
-	
-}*/
-
