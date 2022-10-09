@@ -4,7 +4,7 @@ A simple sidebar menu made with HTML, CSS and JavaScript. It's recommended on sc
 ### Features
 
 - When the sidebar overflows it can be navigated using scroll.
-- When the screen width is less than 576 the sidebar covers 100% of the screen.
+- When the screen width is less than 576px the sidebar covers 100% of the screen.
 
 ### Screenshot
 
