@@ -1,5 +1,5 @@
 /*!
- * Simple Sidebar Menu  v1.0.0
+ * Simple Sidebar Menu  v1.0.1
  * Copyright 2022 Codex Libra
  * Licensed under MIT (https://github.com/codexlibra/simple-sidebar-menu/blob/master/README.md)
  */
@@ -12,7 +12,7 @@
 	--color-blue-tints-n3: #4a92fe;
 	--color-purple-tints-n3: #b54afe;
 	--color-pink-tints-n3: #fe4aec;
-	--box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+	--navbar-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
 	--sidebar-box-shadow: 2px 0px 5px 0px rgba(0,0,0,0.15);
 	--color-body: #f4f4f4;
 }
@@ -22,12 +22,13 @@ body {
 	background-color: var(--color-body);
 }
 
-/* Screen < 576px (XS) */
+/* Screen < 576px */
 .sidebar {
 	height: 65px;
 	background: var(--color-blue);
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	user-select: none;
+	box-shadow: var(--navbar-box-shadow);
 }
 .container {
 	display: flex;
@@ -89,7 +90,6 @@ body {
 	color: var(--color-sidebar-font);
 	text-decoration: none;
 	font-weight: bold;
-	border: 1px solid green;
 }
 .sidebar-link {
 	display: flex;
@@ -162,7 +162,7 @@ body {
 	display: none;
 }
 
-/* Screen >= 576px (SM) */
+/* Screen >= 576px */
 @media (min-width: 576px) {
 	.bx.bx-x {
 		display: none;
@@ -170,6 +170,7 @@ body {
 	.sidebar-list {
 		width: 260px;
 		box-shadow: var(--sidebar-box-shadow);
+		z-index: 2;
 	}
 	.sidebar-list.toggle {
 		left: 0px;
@@ -182,17 +183,13 @@ body {
 	.overlay {
 		position: fixed;
 		top: 0px;
-		left: calc(-100% + 260px);
 		height: 100vh;
-		width: 100%;
-		opacity: 0;
-		pointer-events: none;
-		transition: all 0.5s ease;
+		width: 100vw;
 		background-color: rgba(0,0,0,0.3);
+		visibility: hidden;
+		z-index: 1;
 	}
-	.sidebar-list.toggle .overlay {
-		opacity: 1;
-		pointer-events: auto;
-		left: 260px;
+	.overlay.show {
+		visibility: visible;
 	}
 }
